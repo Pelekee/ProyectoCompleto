@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargos y Rentas</title>
+</head>
+<body>
+    <h1>Selecciona un Cargo</h1>
+
+    <select id="cargos">
+        <option value="">-- Seleccionar --</option>
+    </select>
+
+    <h2>Renta Bruta: <span id="renta"></span></h2>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // obtenemos los cargos
+            fetch('/cargos')
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById("cargos");
+                    data.forEach(cargo => {
+                        let option = document.createElement("option");
+                        option.value = cargo.id;
+                        option.textContent = cargo.nombre;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al cargar los cargos:", error);
+                });
+
+            // Obtener la renta al seleccionar un cargo
+            document.getElementById("cargos").addEventListener("change", function() {
+                const cargoId = this.value;
+                if (cargoId) {
+                    fetch(`/renta/${cargoId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById("renta").textContent = data.renta_bruta;
+                        })
+                        .catch(() => {
+                            document.getElementById("renta").textContent = "No disponible";
+                        });
+                } else {
+                    document.getElementById("renta").textContent = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

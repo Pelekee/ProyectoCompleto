@@ -1,0 +1,5 @@
+litestar
+pandas
+sqlalchemy
+mysql-connector-python
+uvicorn
