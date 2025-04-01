@@ -5,10 +5,10 @@ Symfony actúa como la interfaz principal y se comunica con Litestar para proces
 
 ## **Caracteristicas**
 
-**Carga de archivo Excel PruebaTecnica.xlsx** Mediante Postman.
-**Procesamiento de datos con litestar** (Python).
-**Calculo de renta bruta** y almacenamiento en MySQL.
-**Interfaz Simple con un Select** para visualizar los resultados.
+-**Carga de archivo Excel PruebaTecnica.xlsx** Mediante Postman.
+-**Procesamiento de datos con litestar** (Python).
+-**Calculo de renta bruta** y almacenamiento en MySQL.
+-**Interfaz Simple con un Select** para visualizar los resultados.
 
 
 ### Clonar el Repositorio
