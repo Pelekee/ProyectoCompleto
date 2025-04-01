@@ -1,0 +1,14 @@
+# Symfony (prueba-tecnica)
+prueba-tecnica/var/
+prueba-tecnica/vendor/
+prueba-tecnica/node_modules/
+prueba-tecnica/.env
+prueba-tecnica/public/build/
+prueba-tecnica/public/uploads/
+
+# Litestar (Python)
+litestar/__pycache__/
+litestar/.env
+litestar/venv/
+litestar/instance/
+litestar/*.pyc
