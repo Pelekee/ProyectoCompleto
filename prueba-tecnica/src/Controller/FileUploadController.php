@@ -19,6 +19,12 @@ class FileUploadController extends AbstractController
         $this->httpClient = $httpClient;
     }
 
+    #[Route('/upload-form', name: 'upload_form')]
+    public function showUploadForm(): Response
+    {
+        return $this->render('upload.html.twig');
+    }
+
     #[Route('/upload', name: 'upload_file', methods: ['POST'])]
     public function uploadFile(Request $request): JsonResponse
     {
